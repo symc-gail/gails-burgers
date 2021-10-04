@@ -13,6 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BurgerTypeComponent } from './order-tab/burger-type/burger-type.component';
 import { MatCardModule } from '@angular/material/card';
+import { FeaturedBurgerComponent } from './splash-tab/featured-burger/featured-burger.component';
+import { BurgerState } from './_store/burger.state';
+import { NgxsModule } from '@ngxs/store';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { MatCardModule } from '@angular/material/card';
     TabPageComponent,
     SplashTabComponent,
     OrderTabComponent,
-    BurgerTypeComponent
+    BurgerTypeComponent,
+    FeaturedBurgerComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatSnackBarModule,
     MatCardModule,
+    NgxsModule.forRoot([BurgerState])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,4 +16,12 @@ export class BurgerService {
   getBurgers(): Observable<Burger[]> {
     return of(this.burgers);
   }
+
+  getFeaturedBurger(): Observable<Burger> {
+    return of(this.burgers[0]);
+  }
+
+  getBurgerById(id: string): Observable<Burger | undefined> {
+    return of(this.burgers.find(b => b.id === id));
+  }
 }

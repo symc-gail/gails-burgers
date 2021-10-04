@@ -1,1 +1,2 @@
-<app-burger-type *ngFor="let burger of burgerList" [burger]="burger"></app-burger-type>
+<h2>Burgers on the menu: <span *ngIf="burgerCount === undefined">{{burgerCount}}</span></h2>
+<app-burger-type *ngFor="let burger of (burgerList$ | async)" [burger]="burger"></app-burger-type>
